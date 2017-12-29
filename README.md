@@ -20,19 +20,19 @@ A TLV packet built by or expected by networking.js is structured as follows:
 
 Before we get into usage, the default field types are as follows:
 ```
-|  Field  |                                  Size (octets)                                 |    Parser Arguments    | Expected JS argument type |
-| ------- | ------------------------------------------------------------------------------ | ---------------------- | ------------------------- |
-| istring | 4 (unsigned int representing string length) + len(UTF-encoded string argument) |          None          |           String          |
-|  array  |       sizeof($length_type) + (sizeof($data_type) * len(argument_array));       | Length Type, Data Type |           Varies          |
-|   bool  |                                        1                                       |          None          |          Boolean          |
-|   uint  |                                        4                                       |          None          |          Integer          |
-|  ushort |                                        2                                       |          None          |          Integer          |
-|   byte  |                                        1                                       |          None          |          Integer          |
-|  double |                                        8                                       |          None          |           Double          |
-|  float  |                                        4                                       |          None          |           Double          |
-|   int   |                                        4                                       |          None          |          Integer          |
-|  short  |                                        2                                       |          None          |          Integer          |
-|  varint |                             Varies (look up VarInt)                            |          None          |          Integer          |
+|  Field  |                                  Size (octets)                                     |    Parser Arguments    | Expected JS argument type |
+| ------- | ---------------------------------------------------------------------------------- | ---------------------- | ------------------------- |
+| istring | 4 (unsigned int representing string length) + bytelen(UTF-encoded string argument) |          None          |           String          |
+|  array  |       sizeof($length_type) + (sizeof($data_type) * len(argument_array));           | Length Type, Data Type |           Varies          |
+|   bool  |                                        1                                           |          None          |          Boolean          |
+|   uint  |                                        4                                           |          None          |          Integer          |
+|  ushort |                                        2                                           |          None          |          Integer          |
+|   byte  |                                        1                                           |          None          |          Integer          |
+|  double |                                        8                                           |          None          |           Double          |
+|  float  |                                        4                                           |          None          |           Double          |
+|   int   |                                        4                                           |          None          |          Integer          |
+|  short  |                                        2                                           |          None          |          Integer          |
+|  varint |                             Varies (look up VarInt)                                |          None          |          Integer          |
 ```
 
 ## Usage
